@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular média</title>
+    <style>
+        .botao{
+            background-color: green;
+            color: white;
+        }
+        body{
+            font-family: arial;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Paredão do BBB</h1>
+    <strong>
+        <p>
+            <label for="">Candidato: </label>
+            <input id="candidato" type="text">
+            <label for="">Votos</label>
+            <input id="voto_1" type="text">
+        </p>
+    </strong>
+    <strong>    
+        <p >
+            <label for="">Candidato: </label>
+            <input id="candidato_2"type="text"><br>
+            <label for="">Votos</label>
+            <input id="voto_2" type="text">
+        </p>
+    </strong>
+    <strong>    
+        <p>
+            <label for="">Candidato: </label>
+            <input id="candidato_3" type="text"><br>
+            <label for="">Votos</label>
+            <input id="voto_3" type="text">
+        </p>
+    </strong>
+
+    <button class="botao" id="id_botao" onclick="resultadoBBB()">Mostrar</button>
+    
+    <script>
+        function resultadoBBB(){
+            let votoCandidato1 = parseInt(voto_1.value);
+            let votoCandidato2 = parseInt(voto_2.value);
+            let votoCandidato3 = parseInt(voto_3.value);
+
+            if (votoCandidato1 > votoCandidato2 && votoCandidato1 > votoCandidato3) {
+                alert(`Candidato ${candidato.value}, você teve ${votoCandidato1} votos e por conta disso você está no paredão`);
+            } else if(votoCandidato2 > votoCandidato1 && votoCandidato2 > votoCandidato3) {  
+                alert(`Candidato ${candidato_2.value}, você teve ${votoCandidato2} votos e por conta disso você está no paredão`);
+            } else if(votoCandidato3 > votoCandidato1 && votoCandidato3 > votoCandidato2) {
+                alert(`Candidato ${candidato_3.value}, você teve ${votoCandidato3} votos e por conta disso você está no paredão`); 
+            }
+        }
+    </script>
+</body>
+</html>

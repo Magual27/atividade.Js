@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eleições Governador de SP</title>
+</head>
+<body>
+    <h1>Eleições Governador de SP</h1>
+    <p>
+        <label id="candidato1" for="">Candidato 1:</label>
+        <input type="text"><br>
+        <label for="">Votos:</label>
+        <input id="voto1" type="text">
+    </p>
+    <p>
+        <label id="candidato2" for="">Candidato 2:</label>
+        <input type="text"><br>
+        <label for="">Votos:</label>
+        <input id="voto2" type="text">
+    </p>
+    <p>
+        <label id="candidato3" for="">Candidato 3:</label>
+        <input type="text"><br>
+        <label for="">Votos:</label>
+        <input id="voto3" type="text">
+    </p>
+    <p>
+        <label id="candidato4" for="">Candidato 4:</label>
+        <input type="text"><br>
+        <label for="">Votos:</label>
+        <input id="voto4" type="text">
+    </p>
+    
+    <button onclick="mostrarEleitos()">Mostrar eleitos</button>
+    
+    <div id="resposta">
+        <span>O candidato eleita a presidente foi</span>
+    </div>
+</body>
+</html>
+<script>
+    function mostrarEleitos(){
+        let candidato_1 = candidato1.value
+        let candidato_2 = canditado2.value
+        let candidato_3 = canditado3.value
+        let candidato_4 = candidato4.value
+
+        let vc1 = Number(voto1.value)
+        let vc2 = Number(voto2.value)
+        let vc3 = Number(voto3.value)
+        let vc4 = Number(voto4.value)
+        
+        if (vc1 > vc2 && vc1 > vc3 && vc1 > vc4){
+            resposta.innerHTML = `<span>O candidato eleita a presidente foi ${candidato_1}</span>`
+        }
+    }
+</script>
