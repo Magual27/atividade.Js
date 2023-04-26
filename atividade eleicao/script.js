@@ -1,3 +1,5 @@
+let vetor = []
+
 function mostrarEleitos(){
     let candidato1 = document.querySelector('input#candidato1').value
     let candidato2 = document.querySelector('input#candidato2').value
@@ -13,7 +15,7 @@ function mostrarEleitos(){
     let respostaGovernadorVice = document.querySelector('div#resposta2')
     
     if (vc1 > vc2 && vc1 > vc3 && vc1 > vc4) {
-        respostaGovernador.HTML += `<p>O candidato <strong>${candidato1}</strong> foi eleito para governador</p>`
+        respostaGovernador.innerHTML += `<p>O candidato <strong>${candidato1}</strong> foi eleito para governador</p>`
         if (vc2 > vc3 && vc2 > vc4) {
             respostaGovernadorVice.innerHTML += `<p>E o candidato <strong>${candidato2}</strong> foi eleito para vice governador</p>` 
         } else if (vc3 > vc2 && vc3 > vc4) {

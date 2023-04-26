@@ -1,12 +1,12 @@
-let resultado = "";
-
 function mostrarNumeros(){ 
-    recebenumero = document.getElementById('resultado')
+    let resultado = document.getElementById('resultado')
     
     let numero = 1
     
+    resultado.innerHTML = ``
+    
     while(numero <= 500){
-        recebenumero.innerHTML += `<span> ${resultado}</span> <br>`
+        resultado.innerHTML += `<span> ${numero}</span> <br>`
 
         numero++
     }
@@ -14,12 +14,14 @@ function mostrarNumeros(){
 }
 
 function numeroDe500ate1(){
-    recebenumero = document.getElementById('resultado')
+    let resultado = document.getElementById('resultado')
     
     let numero = 500
     
+    resultado.innerHTML = ``
+    
     while(numero >= 1){
-        recebenumero.innerHTML = `<span> ${resultado}</span> <br>`
+        resultado.innerHTML += `<span> ${numero}</span> <br>`
 
         numero--
     }
