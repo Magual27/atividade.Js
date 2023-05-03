@@ -1,0 +1,29 @@
+*{
+    font-family: Arial;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+h1{
+    background-color: yellow;
+    border-radius: 5px;
+    padding: 10px;
+}
+#btn{
+    margin:  20px;
+    background-color: yellow;
+    border-radius: 5px;
+}
+#bimestre1{
+    margin: 10px;
+}
+#bimestre2{
+    margin: 10px;
+}
+#bimestre3{
+    margin: 10px;
+}
+#bimestre4{
+    margin: 10px;
+}
