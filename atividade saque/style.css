@@ -1,0 +1,15 @@
+*{
+    text-align: center;
+    font-family: Arial;
+}
+#sacando{
+    color: red;
+}
+#depositando{
+    color: green;
+}
+h1{
+    background-color: rgb(228, 154, 18);
+    border-radius: 5px;
+    padding: 10px;
+}
