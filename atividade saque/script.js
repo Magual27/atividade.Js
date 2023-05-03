@@ -6,18 +6,18 @@ Saldo.innerHTML = `
 `
 function Sacar(){
     let valorSacar = Number(document.getElementById('id_saque').value)
-    if (saldo > 0) {
+    if (saldo > 0){ 
         saldo -= valorSacar
         Saldo.innerHTML = `
             <p>Saldo Atual: <strong>${saldo}</strong></p>
         `
         extrato.innerHTML += `
-            <p id="sacando">
-                -$${valorSacar}
-            </p>
-        `
+                <p id="sacando">
+                    -$${valorSacar}
+                </p>
+            `
     } else {
-        alert("O saldo da sua conta acabou")
+        alert("ERRO: Saldo insuficiente para sacar")
     }
 } 
 function Depositar(){
