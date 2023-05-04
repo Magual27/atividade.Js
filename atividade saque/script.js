@@ -8,9 +8,9 @@ function Sacar(){
     let valorSacar = document.getElementById('id_saque').value
     if (valorSacar == "") {
         alert("ERRO: Insira algum valor para sacar")
-    } else if (valorSacar == "0" && saldo > "0") {
+    } else if (valorSacar == "0" && saldo > 0) {
         alert("ERRO: Valor mínimo para saque: R$0,01")
-    } else if (saldo > "0" && valorSacar <= saldo){ 
+    } else if (saldo > 0 && valorSacar <= saldo){ 
         valorSacar = Number(valorSacar)
         saldo -= valorSacar
         Saldo.innerHTML = ` 
@@ -21,9 +21,9 @@ function Sacar(){
                 <strong>-R$${valorSacar}</strong>
             </p>
         `
-    } else if (valorSacar > saldo && saldo > "0") {
+    } else if (valorSacar > saldo && saldo > 0) {
         alert(`ERRO: Valor de saque ultrapassa o saldo, somente sacar ate R$${saldo}`)
-    } else if (valorSacar >= "0" &&  saldo == "0"){
+    } else if (valorSacar >= "0" &&  saldo == 0){
         alert("ERRO: Saldo insuficiente para sacar")
     } 
 } 
