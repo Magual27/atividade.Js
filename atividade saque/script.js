@@ -16,7 +16,7 @@ function Sacar(){
                 -$${valorSacar}
             </p>
         `
-    } else if (valorSacar > saldo && saldo > 0){
+    } else if (valorSacar > saldo && saldo > 0) {
         alert(`ERRO: Valor de saque ultrapassa o saldo, somente sacar ate ${saldo}`)
     } else {
         alert("ERRO: Saldo insuficiente para sacar")
