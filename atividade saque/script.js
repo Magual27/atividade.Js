@@ -1,46 +1,49 @@
 let Saldo = document.getElementById('saldo')
 let extrato = document.getElementById('extrato')
-let saldo = 700
+let saldo = 0
 Saldo.innerHTML = `
-    <p>Saldo Atual: <strong>R$${saldo}</strong></p>
+    <p><strong>Saldo: R$${saldo}</strong></p>
 `
 function Sacar(){
-    let valorSacar = Number(document.getElementById('id_saque').value)
+    let valorSacar = document.getElementById('id_saque').value
     if (valorSacar == "") {
-        alert("ERRO: Valor mínimo para saque -> R$0,01")
-    } else if (valorSacar == 0) {
         alert("ERRO: Insira algum valor para sacar")
-    } else if (saldo > 0 && valorSacar <= saldo){ 
+    } else if (valorSacar == "0" && saldo > "0") {
+        alert("ERRO: Valor mínimo para saque: R$0,01")
+    } else if (saldo > "0" && valorSacar <= saldo){ 
+        valorSacar = Number(valorSacar)
         saldo -= valorSacar
-        Saldo.innerHTML = `
-            <p>Saldo Atual: <strong>${saldo}</strong></p>
+        Saldo.innerHTML = ` 
+            <p><strong>Saldo: R$${saldo}</strong></p>
         `
         extrato.innerHTML += `
             <p id="sacando">
-                -R$${valorSacar}
+                <strong>-R$${valorSacar}</strong>
             </p>
         `
-    } else if (valorSacar > saldo && saldo > 0) {
-        alert(`ERRO: Valor de saque ultrapassa o saldo, somente sacar ate ${saldo}`)
-    } else {
+    } else if (valorSacar > saldo && saldo > "0") {
+        alert(`ERRO: Valor de saque ultrapassa o saldo, somente sacar ate R$${saldo}`)
+    } else if (valorSacar >= "0" &&  saldo == "0"){
         alert("ERRO: Saldo insuficiente para sacar")
     } 
 } 
 function Depositar(){
-    let valorDepositar = Number(document.getElementById('id_deposito').value)
-    if (valorDepositar == 0) {
-        alert("ERRO: Valor minimo para doposito -> R$0,01")
-    } else if (valorDepositar == "") {
-        alert("ERRO: Insira algum valor para depositar")
-    } else {
+    let valorDepositar = document.getElementById('id_deposito').value
+    if (valorDepositar >= "0") {
+        valorDepositar = Number(valorDepositar)
         saldo += valorDepositar
         Saldo.innerHTML = `
-            <p>Saldo Atual: <strong>R$${saldo}</strong></p>
+            <p><strong>Saldo: R$${saldo}</strong></p>
         `
         extrato.innerHTML += `
             <p id="depositando">
-                +R$${valorDepositar}
+                <strong>+R$${valorDepositar}</strong>
             </p>
         `
+    } else if (valorDepositar == "0") {
+        alert("ERRO: Valor mínimo para deposito: R$0,01")
+        console.log(valorDepositar)
+    } else if (valorDepositar == ""){
+        alert("ERRO: Insira algum valor para depositar")
     }
-}
+}   

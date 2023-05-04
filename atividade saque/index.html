@@ -8,25 +8,28 @@
     <title>Saque de Banco</title>
 </head>
 <body>
-    <h1>Banco Inter</h1>
+    <h1>Banco Mere</h1>
     <div class="container">
         <div id="saldo">
 
         </div>
-        <div id="id_inputs1">
-            <label for="id_saque">valor do saque:</label>
-            <input type="text" id="id_saque">
-        </div>
-        <div id="id_inputs2">    
-            <label for="id_deposito">Valor do deposito</label>
+        <div id="id_inputs1">    
+            <label for="id_deposito"><strong>Valor do deposito:</strong></label>
             <input type="text" id="id_deposito">
         </div>
-        <button id="sacar" onclick="Sacar()">Sacar</button>
+        <div id="id_inputs2">
+            <label for="id_saque"><strong>Valor do saque:</strong></label>
+            <input type="text" id="id_saque">
+        </div>
         <button id="depositar" onclick="Depositar()">Depositar</button>
+        <button id="sacar" onclick="Sacar()">Sacar</button>
     </div>
     <div id="extrato">
        <h3>Extrato:</h3> 
     </div>
+    <footer>
+        <p class="copy">&copy; Não Sou O Tejas Mere</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
