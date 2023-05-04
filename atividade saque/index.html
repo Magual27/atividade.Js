@@ -9,21 +9,23 @@
 </head>
 <body>
     <h1>Banco Inter</h1>
-    <div id="saldo">
+    <div class="container">
+        <div id="saldo">
 
+        </div>
+        <div id="id_inputs1">
+            <label for="id_saque">valor do saque:</label>
+            <input type="text" id="id_saque">
+        </div>
+        <div id="id_inputs2">    
+            <label for="id_deposito">Valor do deposito</label>
+            <input type="text" id="id_deposito">
+        </div>
+        <button id="sacar" onclick="Sacar()">Sacar</button>
+        <button id="depositar" onclick="Depositar()">Depositar</button>
     </div>
-    <div id="id_inputs1">
-        <label for="id_saque">valor do saque:</label>
-        <input type="text" id="id_saque">
-    </div>
-    <div id="id_inputs2">    
-        <label for="id_deposito">Valor do deposito</label>
-        <input type="text" id="id_deposito">
-    </div>
-    <button id="sacar" onclick="Sacar()">Sacar</button>
-    <button id="depositar" onclick="Depositar()">Depositar</button>
     <div id="extrato">
-        
+       <h3>Extrato:</h3> 
     </div>
     <script src="script.js"></script>
 </body>
