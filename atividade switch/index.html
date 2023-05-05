@@ -4,15 +4,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Switch</title>
 </head>
 <body>
-    <h1></h1>
-    <select name="" id="categoria_1">
-        <option value="0">...</option>
-        <option value="1"></option>
-        <option value="2"></option>
-        <option value="3"></option>
-    </select>
+    <h1>Loja de Periféricos Gamer</h1>
+    <div class="container">
+        <label for="headsets">Headsets</label>
+        <select name="" id="headsets">
+            <option value="0">...</option>
+            <option value="1">Razer Kraken R$199.99</option>
+            <option value="2">HyperX Cloud Alpha R$440.90</option>
+            <option value="3">Logitech G432 R$380.50</option>
+        </select>
+        <label for="mousepads">Mousepads</label>
+        <select name="" id="mousepads">
+            <option value="0">...</option>
+            <option value="1">Logitech G640 R$160.10</option>
+            <option value="2">Razer Firefly V2 R$190.30</option>
+            <option value="3">HyperX Fury S R$200.50</option>
+        </select>
+        <label for="monitores">Monitores</label>
+        <select name="" id="monitores">
+            <option value="0">...</option>
+            <option value="1">AOC Hero R$1370.59</option>
+            <option value="2">Acer Nitro QG241Y S R$1580.90</option>
+            <option value="3">LG Ultra Gear R$1240.30</option>
+        </select>
+        <label for="mouses">Mouses</label>
+        <select name="" id="mouses">
+            <option value="0">...</option>
+            <option value="1">Razer Deathadder Essential R$150.60</option>
+            <option value="2">Logitech G203 R$300.00</option>
+            <option value="3">HyperX Pulsefire R$240.70</option>
+        </select>
+        <label for="teclados">Teclados</label>  
+        <select name="" id="teclados">
+            <option value="0">...</option>
+            <option value="1">Redragon Kumara R$180.90</option>
+            <option value="2">T-dagger Corvette R$460.20</option>
+            <option value="3">Razer Hustman mini R$1000.20</option>
+        </select>
+        <div class="botao">
+            <button id="btn" onclick="adicionarCarrinho()">Adicionar ao Carrinho</button>
+        </div>
+        <div id="carrinho">
+            <h3>Carrinho:</h3>
+            <div id="carrinho-produtos">
+
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p class="copy">&copy; <strong>Não Sou O Tejas Mere</strong></p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
