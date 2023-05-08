@@ -17,6 +17,7 @@ body{
     border: none;
     padding: 10px;
     border-radius: 10px;
+    cursor: pointer;
 }
 #btn:hover{
     background-color: rgb(55, 55, 173);
@@ -35,4 +36,7 @@ h1 {
     padding: 20px;
     border-radius: 10px;
     gap: 10px;
+}
+.texto-carrinho{
+    text-align: left;
 }
