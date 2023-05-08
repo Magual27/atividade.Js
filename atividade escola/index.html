@@ -11,14 +11,14 @@
     <h1>Sistema Escolar - Emilia de Paiva</h1>
     <div class="container">    
         <div class="inputs">
-            <label for="prof">Professor</label>
+            <label for="prof"><strong>Professor</strong></label>
             <select name="" id="prof">
                 <option value="0">...</option>
                 <option value="1">Manuel</option>
                 <option value="2">Kaique</option>
                 <option value="3">Laura</option>
             </select>
-            <label for="sala">Sala</label>
+            <label for="sala"><strong>Sala</strong></label>
             <select name="" id="sala">
                 <option value="0">...</option>
                 <option value="1">3°A</option>
@@ -27,11 +27,14 @@
             </select>
         </div>
         <div class="input-qntd_aulas">
-            <label for="qntd_aulas">Aulas</label>
+            <label for="qntd_aulas"><strong>Aulas</strong></label>
             <input type="text" id="qntd_aulas">
         </div>
         <div>
-            <button onclick="selecionar()">Selecionar</button>
+            <button class="btn" onclick="selecionar()">Selecionar</button>
+        </div>
+        <div id="res">
+
         </div>
     </div>
     <script src="script.js"></script>
