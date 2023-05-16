@@ -1,7 +1,7 @@
-let numerosDaMega = []
-let numerosEscolhidos = []
-let numerosCorretos = []
 function megasena() {
+    let numerosDaMega = []
+    let numerosEscolhidos = []
+    let numerosCorretos = []
     let numero1 = Number(document.getElementById('numero-mega1').value)
     numerosEscolhidos.push(numero1)
     let numero2 = Number(document.getElementById('numero-mega2').value)
