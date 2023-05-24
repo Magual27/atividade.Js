@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+header{
+    background-color: #003777;
+    height: 50px;
+}
+span{
+    color: white;
+}
+.oferta{
+    color: red;
+}
+.preco1{
+    color:#A5A5A5
+}
+.preco2{
+    color: black;
+}
+.btn-comprar{
+    border-style: none;
+    background-color:#003777;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+.btn-comprar:hover{
+    border-style: none;
+    background-color:#0f56a7;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+.search_bar{
+    background-color: white;
+}
+.foto img{
+    width: 474px;
+    height: 682;
+}
+.foto{
+    width: 600px;
+    height: 575px;
+    /* background-color: aqua; */
+    padding: 70px;
+    border-right: 3px solid black;
+}
+.container-flex{
+    display: flex;
+}
+.container{
+    display: flex;
+}
+.descricao{
+    margin: 0 50px;
+}
