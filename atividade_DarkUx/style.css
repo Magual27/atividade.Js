@@ -12,16 +12,29 @@ header{
 nav{
     display: flex;
     align-items: center;
+
+}
+nav .abas{
+    /* background-color: darkcyan; */
+    margin-right: 250px;
+}
+.abas span{
+    color: white;
+    margin-right: 30px;
+    margin-left: 30px;
+    padding: 5px;
+    cursor: pointer;
+}
+.abas span:hover{
+    color: white;
+    background-color: #0f56a7;
+    border-radius: 10px;
+    /* padding: 10px; */
 }              
 .hamburguer{
     margin-right: 40px;
     margin-left: 40px;
     color: white;
-}
-.aba{
-    color: white;
-    margin-right: 30px;
-    margin-left: 30px;
 }
 .oferta{
     color: red;
@@ -70,6 +83,18 @@ nav{
 }
 .search_bar{
     background-color: white;
+    width: 250px;
+    height: 30px;
+    border-radius: 20px;
+    display: flex;
+}
+.search_bar img {
+    margin-left: 10px;
+    width: 30px;
+}
+.search_bar input{
+    border-style: none;
+    margin-left: 10px;
 }
 .foto img{
     width: 474px;
@@ -79,26 +104,44 @@ nav{
     display: flex;
     width: 70%;
     height: 703px;
-    background-color: aqua;
+    /* background-color: aqua; */
     border-right: 3px solid black;
     justify-content: center;
+}
+.carrinho-produto{
+    margin-left: 200px;
+    padding-top: 50px;
+    padding-left: 50px;
+    height: 703px;
+    display: flex;
+    background-color: aqua;
+    border-left: 3px solid black;
+}
+.carrinho-produto img{
+    width: 300px;
+}
+.foto-carrinho img{
+    width: 300px;
+}
+.foto-carrinho p {
+    font-size: 40px;
 }
 .container{
     display: flex;
 }
 .descricao{
-    background-color: yellow;
+    /* background-color: yellow; */
     width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .carrinho{
-    /* display: flex; */
+    display: flex;
     color: white;
 }
 .carrinho-container{
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
     display: flex;
     flex-direction: column;
     align-items: end;
@@ -114,4 +157,24 @@ nav{
 }
 .descricao-produto{
     font-size: 20px;
+}
+.descricao-produto span{
+    font-size: 15px;
+}
+.descricao-produto img{
+    width: 20px;
+}
+.ver-mais{
+    /* background-color: darkgoldenrod; */
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.ver-mais:hover{
+    background-color: rgb(196, 196, 196);
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
 }

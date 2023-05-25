@@ -1,29 +1,47 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Dark UX design</title>
-</head>
-<body>
-    <header>
-        <nav>
-            <span>Oferta do dia</span>
-            <span>Eletrônicos</span>
-            <span>Novidades</span>
-            <span>Mais Vendidos</span>
-        </nav>
-        <div class="search_bar">
-
-        </div>
-    </header>
-    <section>
-        <div class="foto">
-            <img src="img/616pKB+vNKL._AC_SX679_.jpg" alt="foto_produto">
-        </div>
-    </section>
-</body>
-<script src="script.js"></script>
-</html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="style.css">
+        <title>Dark UX design</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <img class="hamburguer" src="img/menu.svg" alt="menu">
+                <div class="abas">
+                    <span class="aba">Ofertas do dia</span>
+                    <span class="aba">Eletrônicos</span>
+                    <span class="aba">Novidades</span>
+                    <span class="aba">Mais Vendidos</span>
+                </div>   
+                <div class="search_bar">
+                    <img src="img/lupa.svg" alt="lupa">
+                    <input type="text" placeholder="Pesquisar..." onclick="">
+                </div>
+            </nav>
+        </header>
+        <section>
+            <div class="carrinho-produto">
+                <div class="foto-produto">
+                    <span class="foto-produto">
+                        <img src="img/produto.jpg" alt="foto_produto">
+                    </span>
+                </div>
+                <div class="descricao-produto">
+                    Lenovo SérieGaming 3<br>
+                    <br>
+                    <div class="carrinho-container"> 
+                        <button class="btn-comprar" id="btn" onclick="trocaDeTela()">
+                            Finalizar Compra <img src="img/carrinho.svg"
+                            alt="carrinho-icon">
+                        </button>
+                    </div>  
+                </div>
+            </div>   
+        </section>
+    </body>
+    <script src="script.js"></script>

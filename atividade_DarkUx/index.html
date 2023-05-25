@@ -12,12 +12,15 @@
         <header>
             <nav>
                 <img class="hamburguer" src="img/menu.svg" alt="menu">
-                <span class="aba">Oferta do dia</span>
-                <span class="aba">Eletrônicos</span>
-                <span class="aba">Novidades</span>
-                <span class="aba">Mais Vendidos</span>
+                <div class="abas">
+                    <span class="aba">Oferta do dia</span>
+                    <span class="aba">Eletrônicos</span>
+                    <span class="aba">Novidades</span>
+                    <span class="aba">Mais Vendidos</span>
+                </div>   
                 <div class="search_bar">
-
+                    <img src="img/lupa.svg" alt="lupa">
+                    <input type="text" placeholder="Pesquisar..." onclick="" id="src_input">
                 </div>
             </nav>
         </header>
@@ -42,10 +45,12 @@
                                 Modelo da CPU: AMD R Series<br>
                                 Tamanho instalado da memória RAM: 8 GB<br>
                                 <br>
-                                <img src="img/expandir.svg" alt="expandir-icon" width="30px" height="30px">Ver mais
+                                <div class="ver-mais">   
+                                    <img src="img/expandir.svg" alt="expandir-icon"><span>Ver mais</span>
+                                </div> 
                             </p>
                             <div class="carrinho-container"> 
-                                <button class="btn-comprar" id="btn" onclick="">
+                                <button class="btn-comprar" id="btn" onclick="trocaDeTela()">
                                     Comprar <img src="img/carrinho.svg"
                                     alt="carrinho-icon" width="30px" height="30px">
                                 </button>
