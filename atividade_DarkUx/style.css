@@ -15,8 +15,15 @@ nav{
 
 }
 nav .abas{
-    /* background-color: darkcyan; */
     margin-right: 250px;
+}
+.titulo{
+    font-size: 30px;
+    margin-left: 200px;
+    padding-top: 20px;
+    padding-left: 50px;
+    border-left: black solid 3px;
+    display: flex;
 }
 .abas span{
     color: white;
@@ -29,12 +36,25 @@ nav .abas{
     color: white;
     background-color: #0f56a7;
     border-radius: 10px;
-    /* padding: 10px; */
-}              
+}
+.abas span:active{
+    color: white;
+    background-color:#053b79;
+    border-radius: 10px; 
+}             
 .hamburguer{
+    cursor:  pointer;
     margin-right: 40px;
     margin-left: 40px;
-    color: white;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(11%) saturate(7496%) hue-rotate(226deg) brightness(113%) contrast(112%);
+}
+.div-hamburguer:hover{
+    background-color:#0f56a7;
+    border-radius: 10px;
+    height: 50px;
+}
+.div-hamburguer{
+    width: fit-content;
 }
 .oferta{
     color: red;
@@ -77,24 +97,49 @@ nav .abas{
     border-radius: 10px;
     width: 180px;
 }
-.btn-comprar img{
+.btn-comprar:active{
+    border-style: none;
+    background-color:#053b79;
     color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    width: 180px;
+}
+.btn-comprar img{
+    filter: brightness(0) saturate(100%) invert(100%) sepia(11%) saturate(7496%) hue-rotate(226deg) brightness(113%) contrast(112%);
     margin-left: 20px;
 }
-.search_bar{
-    background-color: white;
-    width: 250px;
-    height: 30px;
-    border-radius: 20px;
+.btn-comprar-2{
+    border-style: none;
+    background-color:#003777;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    margin-top: 30px;
+    width: 180px;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    cursor: pointer;
 }
-.search_bar img {
-    margin-left: 10px;
-    width: 30px;
+.btn-comprar-2 img{
+    filter: brightness(0) saturate(100%) invert(100%) sepia(11%) saturate(7496%) hue-rotate(226deg) brightness(113%) contrast(112%);
+    margin-left: 20px;
 }
 .search_bar input{
+    padding-left: 40px;
     border-style: none;
+    width: 250px;
     margin-left: 10px;
+    border-radius: 20px;
+    background-image: url(img/lupa.svg);
+    background-position: 10px 5px;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    height: 30px;
 }
 .foto img{
     width: 474px;
@@ -104,7 +149,6 @@ nav .abas{
     display: flex;
     width: 70%;
     height: 703px;
-    /* background-color: aqua; */
     border-right: 3px solid black;
     justify-content: center;
 }
@@ -114,7 +158,6 @@ nav .abas{
     padding-left: 50px;
     height: 703px;
     display: flex;
-    background-color: aqua;
     border-left: 3px solid black;
 }
 .carrinho-produto img{
@@ -130,7 +173,6 @@ nav .abas{
     display: flex;
 }
 .descricao{
-    /* background-color: yellow; */
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -141,7 +183,14 @@ nav .abas{
     color: white;
 }
 .carrinho-container{
-    /* background-color: blueviolet; */
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: end;
+    height: 50px;
+}
+.carrinho-container-2{
+    margin-top: 70px;
     display: flex;
     flex-direction: column;
     align-items: end;
@@ -164,8 +213,11 @@ nav .abas{
 .descricao-produto img{
     width: 20px;
 }
+.descricao-produto-2{
+    font-size: 20px;
+    margin-left: 20px
+}
 .ver-mais{
-    /* background-color: darkgoldenrod; */
     width: fit-content;
     display: flex;
     align-items: center;

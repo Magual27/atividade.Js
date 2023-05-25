@@ -11,33 +11,39 @@
     <body>
         <header>
             <nav>
-                <img class="hamburguer" src="img/menu.svg" alt="menu">
+                <div class="div-hamburguer">
+                    <img class="hamburguer" src="img/menu.svg" alt="menu">
+                </div>
                 <div class="abas">
-                    <span class="aba">Ofertas do dia</span>
+                    <span class="aba1" onclick="voltarTela()">Ofertas do dia</span>
                     <span class="aba">Eletrônicos</span>
                     <span class="aba">Novidades</span>
                     <span class="aba">Mais Vendidos</span>
                 </div>   
                 <div class="search_bar">
-                    <img src="img/lupa.svg" alt="lupa">
                     <input type="text" placeholder="Pesquisar..." onclick="">
                 </div>
             </nav>
         </header>
         <section>
+            <div class="titulo">
+                <h1>Carrinho</h1> 
+                <img src="img/carrinho.svg" alt="expandir-icon">
+            </div> 
             <div class="carrinho-produto">
                 <div class="foto-produto">
                     <span class="foto-produto">
                         <img src="img/produto.jpg" alt="foto_produto">
                     </span>
                 </div>
-                <div class="descricao-produto">
-                    Lenovo SérieGaming 3<br>
+                <div class="descricao-produto-2">
+                    Lenovo Ideapad Gaming 3<br>
                     <br>
-                    <div class="carrinho-container"> 
-                        <button class="btn-comprar" id="btn" onclick="trocaDeTela()">
+                    <p class="preco2">R$2.219,99</p>
+                    <div class="carrinho-container-2"> 
+                        <button class="btn-comprar-2" id="btn">
                             Finalizar Compra <img src="img/carrinho.svg"
-                            alt="carrinho-icon">
+                            alt="carrinho-icon" width="30px" height="30px">
                         </button>
                     </div>  
                 </div>
