@@ -21,8 +21,10 @@ nav .abas{
     font-size: 30px;
     margin-left: 200px;
     padding-top: 20px;
+    padding-bottom: 20px;
     padding-left: 50px;
     border-left: black solid 3px;
+    border-bottom: black solid 3px;
     display: flex;
 }
 .abas span{
@@ -116,6 +118,37 @@ nav .abas{
     color: white;
     padding-top: 10px;
     padding-bottom: 10px;
+    padding-left: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+    width: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    cursor: pointer;
+}
+.btn-comprar-2:hover{
+    border-style: none;
+    background-color:#0f56a7;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    margin-top: 30px;
+    width: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    cursor: pointer;
+}
+.btn-comprar-2:active{
+    border-style: none;
+    background-color:#053b79;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border-radius: 10px;
     margin-top: 30px;
     width: 180px;
@@ -128,6 +161,7 @@ nav .abas{
 .btn-comprar-2 img{
     filter: brightness(0) saturate(100%) invert(100%) sepia(11%) saturate(7496%) hue-rotate(226deg) brightness(113%) contrast(112%);
     margin-left: 20px;
+    margin-right: 10px;
 }
 .search_bar input{
     padding-left: 40px;
