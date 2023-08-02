@@ -33,7 +33,7 @@ function pedirPizza(){
     }
 
     res.innerHTML = `
-        <p>Valor: ${valor} - Quantidade: ${qtdPessoa} - Valor Para Cada: ${valorPraCada.toFixed(2)}</p>    
+        <p>Valor: ${valor} - Quantidade de Pessoas: ${qtdPessoa} - Valor Para Cada: ${valorPraCada.toFixed(2)}</p>    
     `
 
 }
