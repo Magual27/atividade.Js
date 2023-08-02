@@ -1,30 +1,35 @@
+let pedido = []
+let valor = 0.0
+
 function pedirPizza(){
     
     let pizza = document.getElementById('sabores').value
-    var valor = 0.0
-    let qtdPessoa = Number(document.getElementById('qtd').value)
-    var valorPraCada = 0.0
-    let res = document.getElementById('res')
+    let qtdPizza = Number(document.getElementById('qtdPizza').value)
+    let mul = 0.0
 
     switch (pizza) {
         case "1":
-            valor = 20
-            valorPraCada = valor / qtdPessoa
+            mul = 20 * qtdPizza
+            valor += mul
+            pedido.push(`${qtdPizza}x Queijo`) 
             break;
         
         case "2":
-            valor = 25
-            valorPraCada = valor / qtdPessoa
+            mul = 25 * qtdPizza
+            valor += mul
+            pedido.push(`${qtdPizza}x Portuguesa`)
             break;
         
         case "3":
-            valor = 30
-            valorPraCada = valor / qtdPessoa
+            mul = 30 * qtdPizza
+            valor += mul
+            pedido.push(`${qtdPizza}x Frango com Catupiry`)
             break;
 
         case "4":
-            valor = 22
-            valorPraCada = valor / qtdPessoa
+            mul = 22 * qtdPizza
+            valor += mul
+            pedido.push(`${qtdPizza}x Queijo com Bacon`)
             break;
     
         default:
@@ -32,8 +37,23 @@ function pedirPizza(){
             break;
     }
 
+    document.getElementById('qtdPizza').value = ""
+    document.getElementById('sabores').value = ""
+
+}
+
+function mostraMsg(){
+    
+    let res = document.getElementById('res')
+    let qtdPessoa = Number(document.getElementById('qtd').value)
+    let valorPraCada = 0.0 
+    
+    valorPraCada = valor / qtdPessoa
+
     res.innerHTML = `
-        <p>Valor: ${valor} - Quantidade de Pessoas: ${qtdPessoa} - Valor Para Cada: ${valorPraCada.toFixed(2)}</p>    
+        <p>Pedido: ${pedido}<br>Quantidade de Pessoas: ${qtdPessoa} - Valor Para Cada: ${valorPraCada.toFixed(2)} Valor Total: ${valor}</p>    
     `
+    
+    document.getElementById('qtd').value = ""
 
 }

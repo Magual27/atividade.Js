@@ -17,15 +17,21 @@
         <select name="" id="sabores">
             <option value="0">...</option>
             <option value="1">Queijo R$20</option>
-            <option value="2">Calabresa R$25</option>
+            <option value="2">Portuguesa R$25</option>
             <option value="3">Frango com Catupiry R$30</option>
             <option value="4">Queijo com Bacon R$22</option>
-        </select><br>
+        </select>
+        
+        <label for="qtdPizza">Quantidade:</label>
+        <input type="text" id="qtdPizza">
+        
+        <button id="button" onclick="pedirPizza()">Adicionar ao pedido</button><br>
         
         <label for="qtd">Quantidade de pessoas para dividir o valor da pizza para todos comerem e não ter briga:    </label>
         <input type="text" id="qtd"><br>
         
-        <button id="pedir" onclick="pedirPizza()">Realizar pedido</button>
+        
+        <button id="pedir" onclick="mostraMsg()">Realizar pedido</button>
         
         <div id="res">
 
