@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #094242;
+}
+
+h1{
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+p{
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
