@@ -17,10 +17,4 @@ router.post("/produtos/enviar", (req, res) => {
     console.log(req.body);
 });
 
-router.get("/:produto", (req, res) => {
-    res.sendFile(`${basePath}/produtos.html`);
-    const nome = req.params.produto;
-    console.log(`Nome do produto: ${nome}`);
-});
-
 module.exports = router;

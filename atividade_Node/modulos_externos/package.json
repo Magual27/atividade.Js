@@ -1,0 +1,13 @@
+{
+  "name": "modulos_externos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "inde.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
