@@ -7,7 +7,11 @@ app.engine("handlebars", exphbs.engine());
 app.set("view engine", "handlebars");
 
 app.get("/", (req, res) => {
-    res.render("home", { layout: false });
+    res.render("home");
+});
+
+app.get("/gatos", (req, res) => {
+    res.render("gatos");
 });
 
 app.listen(port, () => {
