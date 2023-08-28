@@ -11,17 +11,29 @@ app.use(express.static("public"));
 app.get("/", (req, res) => {
     const auth = true;
 
-    res.render("home", auth);
+    res.render("home", { auth });
 });
 
 app.get("/gatos", (req, res) => {
-    const gatos = {
-        nome: "Julia",
-        idade: 2,
-        dono: "Jonathan",
-    };
+    const gatos = [
+        {
+            nome: "Julia",
+            idade: 2,
+            dono: "Jonathan",
+        },
+        {
+            nome: "Apollogia",
+            idade: 5,
+            dono: "Apollo"
+        },
+        {
+            nome: "Miguelito",
+            idade: 1,
+            dono: "Miguel"
+        }
+    ]
 
-    res.render("gatos");
+    res.render("gatos", { gatos });
 });
 
 app.listen(port, () => {

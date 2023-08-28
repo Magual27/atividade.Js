@@ -6,5 +6,12 @@
     </head>
     <body>
         <H1>Meow Mewo n...</H1>
+        <ul>
+            {{#each gatos}}
+
+                <li>nome: {{this.nome}} / idade: {{this.idade}} / dono: {{this.dono}} </li>
+                
+            {{/each}}
+        </ul>
     </body>
 </html>
