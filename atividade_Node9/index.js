@@ -14,6 +14,32 @@ app.get("/", (req, res) => {
     res.render("home", { auth });
 });
 
+app.get('/musicas', (req, res) => {
+    const musics = [
+        {
+            titulo: "Carrosel",
+            categoria: "rock",
+            banda: "Iron Maiden"
+        },
+        {
+            titulo: "Batendo na porta",
+            categoria: "rock",
+            banda: "Guns N Roses"
+        },
+        {
+            titulo: "Pinguin",
+            categoria: "ensino",
+            banda: "bla bla bla"
+        },
+        {
+            titulo: "Gato",
+            categoria: "ensino",
+            banda: "bla bla bla"
+        }]
+
+    res.render('blog', { musics })
+})
+
 app.get("/gatos", (req, res) => {
     const gatos = [
         {
