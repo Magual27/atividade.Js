@@ -45,7 +45,11 @@ app.get("/musicas", (req, res) => {
 });
 
 app.get("/musica/:id", (req, res) => {
-    musicaEscolhida = musicas[req.params.id];
+    for (let i = 0; i < musicas.length; i++)
+        if (req.params.id == musicas[i].id) {
+            musicaEscolhida = musicas[i];
+        }
+
     res.render("musica", { musicaEscolhida });
 });
 
