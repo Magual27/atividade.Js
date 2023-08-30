@@ -45,12 +45,16 @@ app.get("/musicas", (req, res) => {
 });
 
 app.get("/musica/:id", (req, res) => {
+    let erro = false;
     for (let i = 0; i < musicas.length; i++)
         if (req.params.id == musicas[i].id) {
             musicaEscolhida = musicas[i];
         }
+    if (req.params.id > musicas.length || req.params.id == 0) {
+        erro = true;
+    }
 
-    res.render("musica", { musicaEscolhida });
+    res.render("musica", { musicaEscolhida, erro });
 });
 
 app.get("/musicas/cadastrar", (req, res) => {

@@ -8,15 +8,7 @@
         <H1>Lista de músicas</H1>
         <ul>
             {{#each musicas}}
-
-                <li>id:
-                    {{this.id}}
-                    / musica:
-                    {{this.nome}}
-                    / artista:
-                    {{this.artista}}
-                </li>
-
+                {{> musicaPartial }}
             {{/each}}
         </ul>
     </body>

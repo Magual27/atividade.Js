@@ -5,12 +5,10 @@
         <title>Document</title>
     </head>
     <body>
-        <ul>
-            <li>musica:
-                {{musicaEscolhida.nome}}
-                / artista:
-                {{musicaEscolhida.artista}}
-            </li>
-        </ul>
+        {{#if erro}}
+            <p>Música não encontrada</p>
+        {{else}}
+            {{> musicaPartial2}}
+        {{/if}}
     </body>
 </html>
