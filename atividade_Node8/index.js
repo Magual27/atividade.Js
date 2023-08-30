@@ -24,14 +24,14 @@ app.get("/gatos", (req, res) => {
         {
             nome: "Apollogia",
             idade: 5,
-            dono: "Apollo"
+            dono: "Apollo",
         },
         {
             nome: "Miguelito",
             idade: 1,
-            dono: "Miguel"
-        }
-    ]
+            dono: "Miguel",
+        },
+    ];
 
     res.render("gatos", { gatos });
 });
