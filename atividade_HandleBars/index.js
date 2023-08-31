@@ -50,11 +50,7 @@ app.get("/musica", (req, res) => {
 
 app.get("/musica/buscar", (req, res) =>{
     let erro = false;
-    let musicaEscolhida;
-    for (let i = 0; i < musicas.length; i++)
-        if (req.query.id == musicas[i].id) {
-            musicaEscolhida = musicas[i];
-        }
+    const musicaEscolhida = musicas[parseInt(req.query.id - 1)];  
     if (req.query.id > musicas.length || req.query.id == 0) {
         erro = true;
     }
