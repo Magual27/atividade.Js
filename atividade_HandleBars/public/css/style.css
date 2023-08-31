@@ -1,9 +1,10 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+a{
+    text-decoration: none;
+    color: black;
+    background-color: chocolate;
+    padding: 5;
+    border-radius: 5px;
 }
-
-body {
-    background-color: aqua;
+a:hover{
+    background-color: rgb(206, 130, 76);
 }

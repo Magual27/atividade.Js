@@ -44,24 +44,29 @@ app.get("/musicas", (req, res) => {
     res.render("musicas", { musicas });
 });
 
-app.get("/musica/:id", (req, res) => {
-    let erro = false;
-    for (let i = 0; i < musicas.length; i++)
-        if (req.params.id == musicas[i].id) {
-            musicaEscolhida = musicas[i];
-        }
-    if (req.params.id > musicas.length || req.params.id == 0) {
-        erro = true;
-    }
-
-    res.render("musica", { musicaEscolhida, erro });
+app.get("/musica", (req, res) => {
+    res.render("musica");
 });
 
-app.get("/musicas/cadastrar", (req, res) => {
+app.get("/musica/buscar", (req, res) =>{
+    let erro = false;
+    let musicaEscolhida;
+    for (let i = 0; i < musicas.length; i++)
+        if (req.query.id == musicas[i].id) {
+            musicaEscolhida = musicas[i];
+        }
+    if (req.query.id > musicas.length || req.query.id == 0) {
+        erro = true;
+    }
+    
+    res.render("musica", { musicaEscolhida, erro })
+})
+
+app.get("/cadastrar", (req, res) => {
     res.render("cadastrarMusica");
 });
 
-app.post("/musicas/enviar", (req, res) => {
+app.post("/cadastrar/enviar", (req, res) => {
     console.log(req.body);
 });
 

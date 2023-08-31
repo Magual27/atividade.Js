@@ -8,9 +8,11 @@
         <h1>Página Inicial</h1>
 
         {{#if auth}}
-        <p>
-            link para acessar as músicas <a href="/musicas">musicas</a>
-        </p>
+     
+        <a href="/musicas">Músicas</a><br><br>
+        <a href="/musica">Pesquisar  </a><br><br>
+        <a href="/cadastrar">Cadastrar Música</a><br>
+       
         {{else}}
             <p>Acesso Negado</p>
         {{/if}}
