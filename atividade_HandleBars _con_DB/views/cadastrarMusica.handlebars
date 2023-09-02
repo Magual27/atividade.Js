@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/cadastrar/enviar" method="post">
+        <span>Música:</span>
+        <input type="text" name="musica"><br>
+        <span>Artista:</span>
+        <input type="text" name="artista"><br><br>
+        <button type="submit">Cadastrar</button>
+    </form>
+    {{#if ver}}
+        <p style="color: red;">*Preencha todos os dados</p>
+    {{/if}}
+</body>
+</html>
