@@ -1,0 +1,107 @@
+body{
+    margin: 0;
+    background-color: #0f0f0f;
+    color: white;
+}
+
+header{
+    margin: 0;
+    width: 100%;
+    background-color: rgb(5, 145, 16);
+    height: 80px;
+}
+
+.btn_cadastrar_home{
+    background-color: rgb(5, 145, 16);
+    float: right;
+    margin-top: 9%;
+    margin-right: 6%;
+    width: 200px;
+    height: 35px;
+    text-decoration: none;
+    display: grid;
+    text-align: center;
+    align-items: center;
+    border-radius: 60px ;
+}
+
+.btn_cadastrar_home:hover{
+    box-shadow: 4px 4px 4px 2px #615757b6 ;
+    cursor: pointer;
+    background-color: rgb(9, 226, 27);
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+header a{
+    float: left;
+    margin-top: 1.4%;
+    margin-left: 7%;
+    text-decoration: none;
+    font-size: 220%;
+    color: beige;
+}
+
+
+.container_musics{
+    display: flex;
+    margin-top: 15%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    height: 500px;
+}
+
+
+.div_musicas{
+    float: left;
+    width: 22%;
+    height: 120px;
+    margin-left: 5% ;
+    margin-right: 5%;
+    background-color: rgba(31, 31, 31, 0.726);
+    border-radius: 3%;
+    cursor: pointer;
+    padding-left: 1%;
+}
+
+
+.form_cadastro{
+    width: 43%;
+    padding-left: 2%;
+    padding-top: 2%;
+    height: 300px;
+    background-color: rgba(31, 31, 31, 0.726);;
+    color: rgb(5, 145, 16);
+}
+
+.form_cadastro input{
+    display: grid;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    width: 95%;
+    outline: 0;
+    border-bottom-color: rgb(5, 145, 16);
+    border-bottom-style: solid ;
+    color: white;
+}
+
+
+.form_cadastro button{
+    background-color: rgb(5, 145, 16);
+    float: right;
+    width: 200px;
+    height: 35px;
+    text-decoration: none;
+    display: grid;
+    text-align: center;
+    align-items: center;
+    border-radius: 60px ;
+    border-bottom: none;
+    border-bottom-style: hidden ;
+}
+
