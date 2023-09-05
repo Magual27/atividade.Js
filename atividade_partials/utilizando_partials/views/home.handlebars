@@ -1,0 +1,23 @@
+<div style="text-align: left; float: left; margin-left: 5%;">
+
+    <h1>Bem vindo ao Empada Apostazzz</h1>
+
+    <h2>O melhor site de apostas</h3>
+
+    <h4>Aqui nossa lista de jogos</h4>
+</div>
+
+
+<div class="btn_cadastrar_home">
+    <a href="/apostas/cadastrar">
+    Cadastrar uma musica
+    </a>
+</div>
+
+<div class="container_musics">
+
+    {{#each query}}
+        {{> jogo}}
+    {{/each}}
+
+</div>
