@@ -37,6 +37,10 @@ a{
     color: white;
 }
 
+#delete {
+    color: black;
+}
+
 header a{
     float: left;
     margin-top: 1.4%;
@@ -105,4 +109,6 @@ header a{
     border-bottom: none;
     border-bottom-style: hidden ;
 }
+
+
 

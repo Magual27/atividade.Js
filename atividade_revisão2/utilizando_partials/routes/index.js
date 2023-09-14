@@ -5,36 +5,42 @@ const app = express();
 const con = require("../connection");
 
 const hbs = exphbs.create({
-    partialsDir: ["views/partials"],
+  partialsDir: ["views/partials"],
 });
 
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
 router.get("/jogos/cadastrar", (req, res) => {
-    res.render("cadastrarJogo");
+  res.render("cadastrarJogo");
 });
 
 router.get(`/jogos/:id`, (req, res) => {
-    con.execute(
-        `SELECT * FROM jogos
+  con.execute(
+    `SELECT * FROM jogos
          WHERE id = ${req.params.id}`,
-        (err, query) => {
-            res.render("jogo", { jogo: query[0] });
-        }
-    );
+    (err, query) => {
+      res.render("jogo", { jogo: query[0] });
+    }
+  );
 });
 
 router.post("/jogos/salvar", (req, res) => {
-    con.execute(
-        `INSERT INTO jogos (jogo, plataforma)
+  con.execute(
+    `INSERT INTO jogos (jogo, plataforma)
          VALUES ("${req.body.nome}", "${req.body.plataforma}")`,
-        (err, query) => {
-            res.redirect("/")
-        }
-    );
+    (err, query) => {
+      res.redirect("/");
+    }
+  );
+});
 
-    
+router.post("/deletar/:id", (req, res) => {
+  const query = `DELETE FROM jogos WHERE id = ${req.params.id}`;
+
+  con.query(query);
+
+  res.redirect("/");
 });
 
 module.exports = router;
