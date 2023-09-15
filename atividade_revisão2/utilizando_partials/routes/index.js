@@ -43,4 +43,24 @@ router.post("/deletar/:id", (req, res) => {
   res.redirect("/");
 });
 
+router.get("/updates/:id", (req, res) => {
+  const id = req.params.id;
+  const sql = `SELECT * FROM jogos WHERE id = ${id}`;
+
+  con.query(sql, (err, query) => {
+    const jogoEscolhido = query[0];
+    err ? console.log(err) : res.render("update", { jogoEscolhido });
+  });
+});
+
+router.post("/jogos/att/:id", (req, res) => {
+  const sql = `UPDATE jogos
+               SET jogo = "${req.body.nome}",plataforma = "${req.body.plataforma}"
+               WHERE id = ${req.params.id}`;
+
+  con.query(sql, (err) => {
+    err ? console.log(err) : res.redirect("/");
+  });
+});
+
 module.exports = router;

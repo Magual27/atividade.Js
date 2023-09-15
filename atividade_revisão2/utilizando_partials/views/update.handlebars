@@ -1,0 +1,10 @@
+<div style="margin-left: 35%;">
+<h1>Editar jogo</h1>
+    <form class="form_cadastro" action="/jogos/att/{{jogoEscolhido.id}}" method="post">
+        <span>Nome do jogo</span> <br>
+        <input placeholder="Digite o nome da musica" name="nome" value="{{jogoEscolhido.jogo}}"> <br>
+        <span>Plataforma</span><br>
+        <input name="plataforma" placeholder="Digita a plataforma..." value="{{jogoEscolhido.plataforma}}">
+        <button class="btn_cadastrar_home" type="submit">Atualizar</button>
+    </form>
+</div>
