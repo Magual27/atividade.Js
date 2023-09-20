@@ -1,0 +1,10 @@
+<h1>{{livro.nome}}</h1>
+<h2>Informações:</h2>
+<h3>Autor(a): {{livro.autor}}</h3>
+<h3>Categoria: {{livro.categoria}}</h3>
+<form action="/livros/deletarLivro/{{livro.id_livro}}" method="post">
+    <button type="submit">Deletar</button>
+</form> 
+<form action="/livros/atualizarDadosLivro/{{livro.id_livro}}" method="get">
+    <button type="submit">Atualizar dados</button>
+</form>

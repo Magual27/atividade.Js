@@ -1,0 +1,24 @@
+<div class="categoria-form">
+    <h3>Categorias:</h3>
+    <form action="/livros/livrosPorCategoria" method="get">
+        <select name="categoria" id="">
+            <option value="0">Todas</option>
+            {{#each categorias}}
+                <option value="{{this.id}}">{{this.categoria}}</option>
+            {{/each}}
+        </select>
+        <button type="submit">Filtrar</button>
+    </form>
+</div>
+
+<h2>{{categoria.categoria}}</h2>
+
+<div class="home">
+    {{#if val}}
+        <h1>Não há livros desta categoria</h1>
+    {{else}}
+        {{#each ChoicedCate}}
+            {{> livroLista}}
+        {{/each}}
+    {{/if}}
+</div>

@@ -1,0 +1,43 @@
+* {
+    font-family: arial;
+}
+
+.home {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-left: 25px;
+}
+
+.categoria-form {
+    display: flex;
+    align-items: center;
+}
+.categoria-form select {
+    margin-left: 10px;
+}
+
+.livro {
+    width: 200px;
+    border-radius: 10px;
+    padding-left: 15px;
+    margin: 20px 10px 20px 10px;
+    padding-right: 15px;
+}
+
+.livro:hover {
+    background-color: rgb(187, 187, 187);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+header a {
+    padding: 5px;
+}
+
+header a:hover {
+    background-color: rgb(187, 187, 187);
+}

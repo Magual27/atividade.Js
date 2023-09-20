@@ -1,0 +1,21 @@
+<h1>Adicionar Livro</h1>
+<form action="/livros/cadastrarLivro/enviar" method="post">
+    <span>Autor:</span><br>
+    <select name="autor" id="">
+         <option value="0">Escolha uma opção...</option>
+        {{#each autores}}
+                <option value="{{this.id}}">{{this.autor}}</option>
+        {{/each}}
+    </select><br>
+    <span>Livro:</span><br>
+    <input type="text" name="nome" placeholder="Nome do livro..."><br>
+    <span>Categorias:</span><br>
+    <select name="categoria" id="cate">
+        <option value="0">Escolha uma opção...</option>
+        {{#each categorias}}
+                <option value="{{this.id}}">{{this.categoria}}</option>
+        {{/each}}
+    </select><br><br>
+
+    <button type="submit">Adicionar</button>
+</form>

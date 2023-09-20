@@ -1,0 +1,21 @@
+<h1>A melhor livraria da minha casa, livraria generica</h1>
+
+<div class="categoria-form">
+    <h3>Categorias:</h3>
+    <form action="/livros/livrosPorCategoria" method="get">
+        <select name="categoria" id="">
+            <option value="0">Todas</option>
+            {{#each categorias}}
+                <option value="{{this.id}}">{{this.categoria}}</option>
+            {{/each}}
+        </select>
+        <button type="submit">Filtrar</button>
+    </form>
+</div>
+
+<div class="home"> 
+    {{#each livros}}
+        {{> livroLista}}
+    {{/each}}
+</div>
+

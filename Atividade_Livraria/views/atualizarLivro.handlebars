@@ -1,0 +1,22 @@
+<h1>Atualizar Livro</h1>
+<form action="/livros/atualizarDadosLivro/att/{{dados.id_livro}}" method="post">
+    <span>Autor:</span><br>
+    <select name="autor" id="">
+         <option value="{{dados.id_autor}}">{{dados.autor}}</option>
+        {{#each autores}}
+                <option value="{{this.id}}">{{this.autor}}</option>
+        {{/each}}
+    </select><br>
+    <span>Livro:</span><br>
+    <input type="text" name="nome" placeholder="Nome do livro..." value="{{dados.nome}}"><br>
+    <span>Categorias:</span><br>
+    <select name="categoria" id="cate">
+        <option value="{{dados.id_categoria}}">{{dados.categoria}}</option>
+        {{#each categorias}}
+                <option value="{{this.id}}">{{this.categoria}}</option>
+        {{/each}}
+    </select><br><br>
+
+    <button type="submit">Atualizar</button>
+    <button><a href="/livros/livroEscolhido/{{dados.id_livro}}">Voltar</a></button>
+</form>
