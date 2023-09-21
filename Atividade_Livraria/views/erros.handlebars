@@ -1,0 +1,20 @@
+{{#if erroAtualizar}}
+    <h1>Erro ao atualizar os dados</h1>
+    <h3>Preencha todos os campos</h3>
+    <button> <a href="/livros/atualizarDadosLivro/{{idLivro}}">voltar</a> </button>
+{{/if}}
+<h1>Erro ao cadastrar</h1>
+{{#if erroCadastroDadosLivro}}
+    <h3>Preencha todos os campos</h3>
+    <button> <a href="/livros/cadastrarLivro">voltar</a> </button>
+{{/if}}
+{{#if erroCadastroDadoAutor}}
+<h3>Preencha todos os campos</h3>
+    <button> <a href="/livros/cadastrarAutor">voltar</a> </button>
+{{/if}}
+{{#if erroCadastro}}
+    <h3>Livro já cadastrado no sistema</h3>
+    <button> <a href="/livros/cadastrarLivro">voltar</a> </button>
+{{/if}}
+
+

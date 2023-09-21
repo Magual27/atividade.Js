@@ -13,7 +13,7 @@ app.set("view engine", "handlebars");
 
 router.get("/livrosPorCategoria", (req, res) => {
     let val = false;
-    
+
     const idCategoria = req.query.categoria;
 
     const getAllCategorias = `SELECT * FROM categorias`;
@@ -21,7 +21,8 @@ router.get("/livrosPorCategoria", (req, res) => {
     const querySelect = `SELECT id_livro, nome, autor, id_categoria, categoria  FROM livros
                          JOIN autores ON (autores.id = livros.id_autor)
                          JOIN categorias ON (categorias.id = livros.id_categoria)
-                         WHERE id_categoria = ${idCategoria}`;
+                         WHERE id_categoria = ${idCategoria}
+                         ORDER BY nome`;
 
     if (idCategoria == 0) {
         res.redirect("/");
@@ -35,7 +36,10 @@ router.get("/livrosPorCategoria", (req, res) => {
                       } else {
                           if (query1 == false) {
                               val = true;
-                              res.render("livrosCategoria", {categorias: query2, val});
+                              res.render("livrosCategoria", {
+                                  categorias: query2,
+                                  val,
+                              });
                           } else {
                               con.query(querySelect, (err, query3) => {
                                   res.render("livrosCategoria", {
@@ -67,7 +71,7 @@ router.get("/livroEscolhido/:id", (req, res) => {
 router.get("/cadastrarLivro", (req, res) => {
     const getCategorias = `SELECT * FROM categorias`;
 
-    const getAutores = `SELECT * FROM autores`;
+    const getAutores = `SELECT * FROM autores ORDER BY autor`;
 
     con.query(getCategorias, (err, query1) => {
         err
@@ -92,7 +96,7 @@ router.get("/atualizarDadosLivro/:id", (req, res) => {
 
     const getCategorias = `SELECT * FROM categorias`;
 
-    const getAutores = `SELECT * FROM autores`;
+    const getAutores = `SELECT * FROM autores ORDER BY autor`;
 
     const query = `SELECT id_livro, nome, id_autor, autor, id_categoria, categoria FROM livros
                    JOIN autores ON (autores.id = livros.id_autor)
@@ -117,12 +121,14 @@ router.get("/atualizarDadosLivro/:id", (req, res) => {
 });
 
 router.post("/cadastrarAutor/enviar", (req, res) => {
+    let erroCadastroDadoAutor;
     const autor = req.body.autor;
 
     const query = `INSERT INTO autores (autor) VALUES ("${autor}")`;
 
     if (autor == "") {
-        res.render("erroCadastro");
+        erroCadastroDadoAutor = true;
+        res.render("erros", { erroCadastroDadoAutor });
     } else {
         con.query(query, (err, query) => {
             err ? console.log(err) : console.log("query executada com sucesso");
@@ -132,6 +138,8 @@ router.post("/cadastrarAutor/enviar", (req, res) => {
 });
 
 router.post("/cadastrarLivro/enviar", (req, res) => {
+    let erroCadastro = false;
+    let erroCadastroDadosLivro = false;
     const livro = req.body.nome;
     const autor = req.body.autor;
     const categoria = req.body.categoria;
@@ -140,16 +148,35 @@ router.post("/cadastrarLivro/enviar", (req, res) => {
                    VALUES ("${livro}", ${autor}, ${categoria})`;
 
     if (livro == "" || autor == 0 || categoria == 0) {
-        res.render("erroCadastro");
+        erroCadastroDadosLivro = true;
+        res.render("erros", { erroCadastroDadosLivro });
     } else {
-        con.query(query, (err, query) => {
-            err ? console.log(err) : console.log("query executada com sucesso");
-            res.redirect("/");
-        });
+        con.query(
+            `SELECT nome, id_autor FROM livros WHERE nome = "${livro}" AND  id_autor = ${autor}`,
+            (err, query1) => {
+                if (err) {
+                    console.log(err);
+                } else {
+                    if (query1 == false) {
+                        con.query(query, (err, query) => {
+                            err
+                                ? console.log(err)
+                                : console.log("query executada com sucesso");
+                            res.redirect("/");
+                        });
+                        console.log(query1);
+                    } else {
+                        erroCadastro = true;
+                        res.render("erros", { erroCadastro });
+                    }
+                }
+            }
+        );
     }
 });
 
 router.post("/atualizarDadosLivro/att/:id", (req, res) => {
+    let erroAtualizar = false;
     const idLivro = req.params.id;
     const livro = req.body.nome;
     const autor = req.body.autor;
@@ -159,7 +186,8 @@ router.post("/atualizarDadosLivro/att/:id", (req, res) => {
                          SET nome = "${livro}", id_autor = ${autor}, id_categoria = ${categoria}
                          WHERE id_livro = ${idLivro}`;
     if (livro == "") {
-        res.render("erroAtualizar", { idLivro });
+        erroAtualizar = true;
+        res.render("erros", { erroAtualizar, idLivro });
     } else {
         con.query(queryUpdate, (err, query) => {
             err
