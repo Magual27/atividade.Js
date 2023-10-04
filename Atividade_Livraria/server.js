@@ -24,8 +24,6 @@ app.use(express.static("public"));
 
 app.get("/", (req, res) => {
     const getAll = `SELECT * FROM livros
-                    JOIN autores ON (autores.id = livros.id_autor)
-                    JOIN categorias ON (categorias.id = livros.id_categoria)
                     ORDER BY nome`;
 
     const getAllCategorias = `SELECT * FROM categorias`;

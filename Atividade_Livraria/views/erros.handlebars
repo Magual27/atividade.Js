@@ -3,6 +3,11 @@
     <h3>Preencha todos os campos</h3>
     <button> <a href="/livros/atualizarDadosLivro/{{idLivro}}">voltar</a> </button>
 {{/if}}
+{{#if erroUpdateLivro}}
+    <h1>Erro ao atualizar os dados</h1>
+    <h3>Livro já existente</h3>
+    <button> <a href="/livros/atualizarDadosLivro/{{idLivro}}">voltar</a></button>
+{{/if}}
 <h1>Erro ao cadastrar</h1>
 {{#if erroCadastroDadosLivro}}
     <h3>Preencha todos os campos</h3>
@@ -11,6 +16,10 @@
 {{#if erroCadastroDadoAutor}}
 <h3>Preencha todos os campos</h3>
     <button> <a href="/livros/cadastrarAutor">voltar</a> </button>
+{{/if}}
+{{#if erroCadastroLivroAutor}}
+    <h3>Livro e autor já cadastrado no sistema</h3>
+    <button> <a href="/livros/cadastrarLivro">voltar</a> </button>
 {{/if}}
 {{#if erroCadastro}}
     <h3>Livro já cadastrado no sistema</h3>

@@ -1,22 +1,36 @@
 <h1>Atualizar Livro</h1>
-<form action="/livros/atualizarDadosLivro/att/{{dados.id_livro}}" method="post">
-    <span>Autor:</span><br>
-    <select name="autor" id="">
+<form action="/livros/atualizarDadosLivro/att/{{livroCategoria.id_livro}}" method="post">
+    <span>Autor(es):</span><br>
+    {{!-- <select name="autor" id="">
          <option value="{{dados.id_autor}}">{{dados.autor}}</option>
         {{#each autores}}
                 <option value="{{this.id}}">{{this.autor}}</option>
         {{/each}}
-    </select><br>
+    </select><br> --}}
+    <div class="autores">
+        {{#each autoresLivro}}
+            <div class="autorElement">
+                <input type="checkbox" name="autores" id="" value="{{this.id_autor}}" checked>
+                <span>{{this.autor}}</span>
+            </div>
+        {{/each}}
+        {{#each autores}}
+            <div class="autorElement">
+                <input type="checkbox" name="autores" id="" value="{{this.id}}">
+                <span>{{this.autor}}</span>
+            </div>
+        {{/each}}
+    </div>
     <span>Livro:</span><br>
-    <input type="text" name="nome" placeholder="Nome do livro..." value="{{dados.nome}}"><br>
+    <input type="text" name="nome" placeholder="Nome do livro..." value="{{livroCategoria.nome}}"><br>
     <span>Categorias:</span><br>
     <select name="categoria" id="cate">
-        <option value="{{dados.id_categoria}}">{{dados.categoria}}</option>
+        <option value="{{livroCategoria.id_categoria}}">{{livroCategoria.categoria}}</option>
         {{#each categorias}}
                 <option value="{{this.id}}">{{this.categoria}}</option>
         {{/each}}
     </select><br><br>
 
     <button type="submit">Atualizar</button>
-    <button><a href="/livros/livroEscolhido/{{dados.id_livro}}">Voltar</a></button>
 </form>
+<button><a href="/livros/livroEscolhido/{{livroCategoria.id_livro}}">Voltar</a></button>

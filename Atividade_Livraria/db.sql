@@ -20,6 +20,13 @@ CREATE TABLE categorias (
     categoria VARCHAR(255) NOT NULL
 );
 
+CREATE TABLE livros_autores (
+	id_livro INT,
+    id_autor INT,
+    CONSTRAINT FK_livro FOREIGN KEY (id_livro) REFERENCES livros(id_livro),
+    CONSTRAINT CE_autor FOREIGN KEY (id_autor) REFERENCES autores(id)
+);
+
 INSERT INTO categorias (categoria)
 VALUES ("Ficção"),("Terror"),("Investigação Policial"),("Romance"),("Suspense"),("Tecnologia");
 
@@ -29,6 +36,10 @@ SELECT * FROM livros;
 
 SELECT * FROM autores;
 
-SELECT id_livro, nome, id_autor, autor, id_categoria, categoria FROM livros
-JOIN autores ON (autores.id = livros.id_autor)
+SELECT id_livro, nome, id_categoria, categoria FROM livros
 JOIN categorias ON (categorias.id = livros.id_categoria);
+
+SELECT livros_autores.id_livro, nome, id_autor, autor FROM livros_autores
+JOIN livros ON (livros_autores.id_livro = livros.id_livro)
+JOIN autores ON (livros_autores.id_autor = autores.id)
+ORDER BY nome;
