@@ -5,15 +5,15 @@
 </div>
 
 
-{{#if canditados}}
-<h1>Há canditatods
-    
-</h1>
+{{#if users}}
+{{#each users}}
+    {{> user}}
+{{/each}}
 {{else}}
 <div style="text-align: center;">
     <h1>Não há canditados... </h1>
     <a href="/">
         <h3>Cadastre usuarios</h3>
-    </a>
+    </a>    
 </div>
 {{/if}}
