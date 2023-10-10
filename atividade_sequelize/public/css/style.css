@@ -62,10 +62,11 @@ header a{
     float: left;
     width: 22%;
     height: 120px;
-    margin-left: 5% ;
+    margin-left: 5%;
     margin-right: 5%;
+    margin-top: 5%;
     background-color: rgba(9, 110, 177, 0.637);
-    border-radius: 3%;
+    border-radius: 10px;
     cursor: pointer;
     padding-left: 1%;
 }

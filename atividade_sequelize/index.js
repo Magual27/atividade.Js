@@ -4,6 +4,7 @@ const exphbs = require("express-handlebars");
 const app = express();
 const conn = require("./db/conn");
 const User = require("./models/User");
+const { where } = require("sequelize");
 
 //BODY
 app.use(
@@ -44,10 +45,30 @@ app.post("/users/create", async (req, res) => {
 
     alertas == "on" ? (alertas = true) : (alertas = false);
 
+    if (nome == "" || email == "" || senha == "" || ocupacao == "") {
+        return res.send("<script>alert('Preencha todos os dados'); window.location.replace('/users/cadastrar')</script>")
+    }
+
     await User.create({ nome, email, senha, ocupacao, alertas });
 
     res.redirect('/')
 });
+
+app.get('/user/:id', async (req, res) => {
+    const id = parseInt(req.params.id);
+    
+    const user = await User.findOne({where: id, raw: true});
+
+    res.render('userData', { user });
+});
+
+app.post('/user/delete/:id', async (req, res) => {
+    const id = parseInt(req.params.id);
+    
+    User.destroy({where: {id: id}});
+
+    res.redirect('/')
+})
 
 app.use((req, res) => {
     res.status(404).render("404");
