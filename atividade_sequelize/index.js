@@ -5,6 +5,7 @@ const app = express();
 const conn = require("./db/conn");
 const User = require("./models/User");
 const { where } = require("sequelize");
+const { reset } = require("nodemon");
 
 //BODY
 app.use(
@@ -45,7 +46,11 @@ app.post("/users/create", async (req, res) => {
 
     alertas == "on" ? (alertas = true) : (alertas = false);
 
-    if (nome == "" || email == "" || senha == "" || ocupacao == "") {
+    if (email.includes(".com") == false) {
+        return res.send("<script>alert('Está faltando '.com' no email'); window.location.replace('/users/cadastrar')</script>")
+    }
+
+    if (nome == "" || email == "" || senha == "" || ocupacao == "" ) {
         return res.send("<script>alert('Preencha todos os dados'); window.location.replace('/users/cadastrar')</script>")
     }
 
@@ -65,16 +70,58 @@ app.get('/user/:id', async (req, res) => {
 app.post('/user/delete/:id', async (req, res) => {
     const id = parseInt(req.params.id);
     
-    User.destroy({where: {id: id}});
+    await User.destroy({where: {id: id}});
 
     res.redirect('/')
+});
+
+app.get('/user/update/:id', async (req, res) => {
+    const id = parseInt(req.params.id);
+    
+    const user = await User.findOne({where: id, raw: true});
+
+    res.render('attUser', { user });
+});
+
+app.post('/user/att/:id', async (req, res) => {
+    const id = parseInt(req.params.id);
+    const nome = req.body.nome;
+    const email = req.body.email;
+    const senha = req.body.senha;
+    const ocupacao = req.body.ocupacao;
+    let alertas = req.body.alerta;
+
+    alertas == "on" ? (alertas = true) : (alertas = false);
+
+    if (email.includes(".com") == false) {
+        return res.send("<script>alert('Está faltando '.com' no email'); window.location.replace('/users/cadastrar')</script>")
+    }
+
+    if (nome == "" || email == "" || senha == "" || ocupacao == "" ) {
+        return res.send("<script>alert('Preencha todos os dados'); window.location.replace('/users/cadastrar')</script>")
+    }
+
+    const user = {
+        nome,
+        email,
+        senha,
+        ocupacao
+    }
+
+    await User.update(user , {where: {id: id}});
+
+    res.redirect('/')
+})
+
+app.post('/user/update/att', async (req, res) => {
+
 })
 
 app.use((req, res) => {
     res.status(404).render("404");
 });
 
-conn.sync()
+conn.sync({force: true})
     .then(() => {
         app.listen(3000);
     })

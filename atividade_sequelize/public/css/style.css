@@ -61,7 +61,7 @@ header a{
 .div_musicas{
     float: left;
     width: 22%;
-    height: 120px;
+    height: 166px;
     margin-left: 5%;
     margin-right: 5%;
     margin-top: 5%;
@@ -108,3 +108,7 @@ header a{
     border-bottom-style: hidden ;
 }
 
+.container-forms {
+    display: flex;
+    gap: 5px;
+}
