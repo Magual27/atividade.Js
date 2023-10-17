@@ -4,6 +4,7 @@ const exphbs = require("express-handlebars");
 const app = express();
 const conn = require("./db/conn");
 const User = require("./models/User");
+const Experience = require('./models/Xp')
 const { where } = require("sequelize");
 const { reset } = require("nodemon");
 
@@ -114,7 +115,7 @@ app.post('/user/att/:id', async (req, res) => {
 })
 
 app.post('/user/update/att', async (req, res) => {
-
+    
 })
 
 app.use((req, res) => {
