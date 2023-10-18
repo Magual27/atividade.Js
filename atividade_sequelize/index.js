@@ -5,8 +5,6 @@ const app = express();
 const conn = require("./db/conn");
 const User = require("./models/User");
 const Experience = require('./models/Xp')
-const { where } = require("sequelize");
-const { reset } = require("nodemon");
 
 //BODY
 app.use(
@@ -112,10 +110,6 @@ app.post('/user/att/:id', async (req, res) => {
     await User.update(user , {where: {id: id}});
 
     res.redirect('/')
-})
-
-app.post('/user/update/att', async (req, res) => {
-    
 })
 
 app.use((req, res) => {
