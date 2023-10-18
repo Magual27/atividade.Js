@@ -2,6 +2,7 @@ body{
     margin: 0;
     background-color: #ffffff;
     color: black;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 header{
@@ -61,14 +62,14 @@ header a{
 .div_musicas{
     float: left;
     width: 22%;
-    height: 166px;
+    height: fit-content;
     margin-left: 5%;
     margin-right: 5%;
-    margin-top: 5%;
     background-color: rgba(9, 110, 177, 0.637);
     border-radius: 10px;
     cursor: pointer;
-    padding-left: 1%;
+    padding: 1%;
+    color: white;
 }
 
 
