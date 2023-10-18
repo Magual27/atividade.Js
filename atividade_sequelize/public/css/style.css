@@ -93,7 +93,6 @@ header a{
     color: white;
 }
 
-
 .form_cadastro button{
     background-color: rgb(5, 145, 16);
     float: right;
@@ -111,4 +110,12 @@ header a{
 .container-forms {
     display: flex;
     gap: 5px;
+}
+
+.input-desc {
+    width: 335px;
+}
+
+.div-exp {
+    display: flex;
 }

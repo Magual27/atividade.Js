@@ -63,9 +63,11 @@ app.post("/users/create", async (req, res) => {
 app.get('/user/:id', async (req, res) => {
     const id = parseInt(req.params.id);
     
-    const user = await User.findOne({where: id, raw: true});
+    const user = await User.findOne({ where: id, raw: true });
 
-    res.render('userData', { user });
+    const experiencia = await Experience.findAll({ where: { UserId: id }, raw: true });
+
+    res.render('userData', { user, experiencia });
 });
 
 app.post('/user/delete/:id', async (req, res) => {
@@ -112,6 +114,27 @@ app.post('/user/att/:id', async (req, res) => {
     await User.update(user , {where: {id: id}});
 
     res.redirect('/')
+});
+
+app.get('/user/experience/adicionar/:id', async (req, res) => {
+    const id = req.params.id
+
+    res.render('addExperience', { id });
+});
+
+app.post('/user/experience/create/:id', async (req, res) => {
+    const empresa = req.body.empresa;
+    const cargo = req.body.cargo;
+    const descricao = req.body.descricao;
+    const UserId = req.params.id
+
+    if (empresa == "" || cargo == "") {
+        return res.send("<script>alert('Preencha todos os dados'); window.location.replace('/users/cadastrar')</script>")
+    }
+
+    await Experience.create({empresa, cargo, descricao, UserId});
+
+    res.redirect(`/user/${UserId}`)
 });
 
 app.use((req, res) => {

@@ -13,7 +13,7 @@ const Experience = db.define('Experience', {
         type: DataTypes.STRING,
         required: true
     },
-    dercricao: {
+    descricao: {
         type: DataTypes.STRING,
     }
 });
