@@ -2,9 +2,10 @@ const express = require("express");
 const port = 3000;
 const exphbs = require("express-handlebars");
 const app = express();
-const conn = require("./db/conn");
-const User = require("./models/User");
-const Experience = require('./models/Xp')
+const conn = require("./src/db/conn");
+const Experience = require('./src/models/Xp')
+const userController = require('./src/controllers/userController');
+const User = require('./src/models/User')
 
 //BODY
 app.use(
@@ -16,12 +17,13 @@ app.use(
 app.use(express.json());
 
 const hbs = exphbs.create({
-    partialsDir: ["views/partials"],
+    partialsDir: ["src/views/partials"],
 });
 
 // construção das handlebars
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
+app.set("views", "src/views");
 
 //css
 app.use(express.static("public"));
@@ -110,7 +112,7 @@ app.post('/user/att/:id', async (req, res) => {
     await User.update(user , {where: {id: id}});
 
     res.redirect('/')
-})
+});
 
 app.use((req, res) => {
     res.status(404).render("404");
