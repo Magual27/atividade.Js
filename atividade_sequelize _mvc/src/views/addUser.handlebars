@@ -1,0 +1,23 @@
+<h1>Cadastro de usuarios</h1>
+
+<form action="/users/create" method="post">
+    <span>Nome</span><br>
+    <input name="nome" type="text" placeholder="Digite seu nome"><br>
+    <span>Email</span><br>
+    <input name="email" type="email" placeholder="Digite seu email"><br>
+    <span>Senha</span><br>
+    <input name="senha" type="password" placeholder="Digite a sua senha"><br>
+    <span>Ocupação</span><br>
+    <input name="ocupacao" type="text" placeholder="Digite sua ocupação"><br>
+    <input type="checkbox" name="alertas" checked>
+    <span>Deseja receber notificação de vagas?</span><br>
+    <button type="submit">Cadastrar</button>
+</form>
+
+{{#if emailWithoutDotCom}}
+    <span style="color: red;">*Está faltando ".com" no endereço de email</span>
+{{/if}}
+
+{{#if nullData}}
+    <span style="color: red;">*Preencha todos os dados</span>
+{{/if}}

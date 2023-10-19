@@ -1,0 +1,15 @@
+<h1>Adicionar experiência</h1>
+
+<form action="/user/experience/create" method="post">
+    <span>Empresa</span><br>
+    <input name="empresa" type="text" placeholder="Digite a empresa"><br>
+    <span>Cargo</span><br>
+    <input name="cargo" type="text" placeholder="Digite o cargo"><br>
+    <span>Descrição</span><br>
+    <input name="descricao" type="text" placeholder="Escreva um breve resumo da sua experência (Opcional)" class="input-desc"><br>
+    <input name="UserId" type="hidden" value="{{id}}">
+    <button type="submit">Adcionar</button>
+</form>
+<a href="/user/{{id}}">
+    <button>Voltar</button>
+</a>
