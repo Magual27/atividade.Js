@@ -1,5 +1,4 @@
 const userModel = require("../models/User");
-const experienceModel = require("../models/Xp");
 
 const getAll = async (req, res) => {
     const users = await userModel.getAll();
@@ -12,9 +11,7 @@ const getOne = async (req, res) => {
 
     const user = await userModel.getOne(id);
 
-    const experiencia = await experienceModel.getUserExperience(id);
-
-    return res.render("userData", { user, experiencia });
+    return res.render("userData", { user: user.get({ plain: true }) });
 };
 
 const getCreateUserPage = (_req, res) => {
@@ -22,10 +19,6 @@ const getCreateUserPage = (_req, res) => {
 };
 
 const createUser = async (req, res) => {
-    req.body.alertas == "on"
-        ? (req.body.alertas = true)
-        : (req.body.alertas = false);
-
     await userModel.createUser(req.body);
 
     return res.redirect("/");
@@ -40,11 +33,11 @@ const deleteUser = async (req, res) => {
 };
 
 const getUpdateUserPage = async (req, res) => {
-    const id = req.params.id
-    
+    const id = req.params.id;
+
     const user = await userModel.getOne(id);
 
-    return res.render("attUser", { user });
+    return res.render("attUser", { user: user.get({ plain: true }) });
 };
 
 const updateUser = async (req, res) => {
@@ -55,18 +48,6 @@ const updateUser = async (req, res) => {
     return res.redirect("/");
 };
 
-const getAddExperiencePage = (req, res) => {
-    const id = req.params.id;
-
-    return res.render("addExperience", { id });
-}
-
-const createUserExperience = async (req, res) => {
-    await experienceModel.createExperience(req.body);
-
-    return res.redirect(`/user/${req.body.UserId}`);
-}
-
 module.exports = {
     getAll,
     getOne,
@@ -75,6 +56,4 @@ module.exports = {
     deleteUser,
     getUpdateUserPage,
     updateUser,
-    getAddExperiencePage,
-    createUserExperience,
 };

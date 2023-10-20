@@ -8,10 +8,10 @@
     <span>Ocupaão</span><br>
     <input name="ocupacao" type="text" placeholder="Digite sua ocupação" value="{{user.ocupacao}}"><br>
     {{#if user.alertas}}
-        <input type="checkbox" name="alerta" checked>
+        <input type="checkbox" name="alertas" checked>
         <span>Deseja receber notificação de vagas?</span><br>
     {{else}}
-        <input type="checkbox" name="alerta">
+        <input type="checkbox" name="alertas">
         <span>Deseja receber notificação de vagas?</span><br>
     {{/if}}
     <button type="submit">Atualizar</button>

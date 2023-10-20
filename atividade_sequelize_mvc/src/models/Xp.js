@@ -2,8 +2,6 @@ const { DataTypes } = require('sequelize');
 
 const db = require('../db/conn');
 
-const { User } = require('./User');
-
 const Experience = db.define('Experience', {
     empresa: {
         type: DataTypes.STRING,
@@ -18,18 +16,11 @@ const Experience = db.define('Experience', {
     }
 });
 
-Experience.belongsTo(User);
-
-const getUserExperience = (id) => {
-    return Experience.findAll({where: {UserId: id}, raw: true});
-}
-
-const createExperience = async(data) => {
+const createExperience = async (data) => {
     await Experience.create(data);
 }
 
 module.exports = {
     Experience,
-    getUserExperience,
     createExperience,
 };
