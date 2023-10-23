@@ -2,11 +2,12 @@
     <span>Nome</span><br>
     <input name="nome" type="text" placeholder="Digite o nome" value="{{pet.nome}}"><br>
     <span>Raça</span><br>
-    <input name="raca" type="email" placeholder="Digite a raça" value="{{pet.raca}}"><br>
+    <input name="raca" type="text" placeholder="Digite a raça" value="{{pet.raca}}"><br>
     <span>Tipo</span><br>
-    <input name="tipo" type="password" placeholder="Digite o tipo" value="{{pet.tipo}}"><br>
+    <input name="tipo" type="text" placeholder="Digite o tipo" value="{{pet.tipo}}"><br>
     <span>Data de Nascimento</span><br>
-    <input name="data_nasc" type="date" value="{{pet.data_nasc}}"><br>
+    <p>{{pet.data_nasc}}</p>
+    <input name="data_nasc" type="date"><br>
     <span>Descrição:</span><br>
     <input name="descricao" type="text" value="{{pet.descricao}}"><br>
     <button type="submit">Atualizar</button>

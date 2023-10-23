@@ -8,12 +8,12 @@ body{
 header{
     margin: 0;
     width: 100%;
-    background-color: rgb(9, 110, 177);
+    background-color: rgb(0, 133, 18);
     height: 80px;
 }
 
 .btn_cadastrar_home{
-    background-color: rgb(9, 110, 177);
+    background-color: rgb(0, 133, 18);
     font-size: 50px;
     right: 70px;
     bottom: 20px;
@@ -65,7 +65,7 @@ header a{
     height: fit-content;
     margin-left: 5%;
     margin-right: 5%;
-    background-color: rgba(9, 110, 177, 0.637);
+    background-color: rgb(0, 133, 18);
     border-radius: 10px;
     cursor: pointer;
     padding: 1%;
@@ -79,7 +79,7 @@ header a{
     padding-top: 2%;
     height: 300px;
     background-color: rgba(31, 31, 31, 0.726);;
-    color: rgb(5, 145, 16);
+    color: rgb(0, 133, 18);
 }
 
 .form_cadastro input{
@@ -89,13 +89,13 @@ header a{
     border: none;
     width: 95%;
     outline: 0;
-    border-bottom-color: rgb(5, 145, 16);
+    border-bottom-color: rgb(0, 133, 18);
     border-bottom-style: solid ;
     color: white;
 }
 
 .form_cadastro button{
-    background-color: rgb(5, 145, 16);
+    background-color: rgb(0, 133, 18);
     float: right;
     width: 200px;
     height: 35px;

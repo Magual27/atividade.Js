@@ -1,6 +1,6 @@
 const db = require('../db/conn')
 
-const { DataTypes } = require("sequelize");
+const { DataTypes, where } = require("sequelize");
 
 const Animal = db.define('animal', {
     nome: {
@@ -23,4 +23,33 @@ const Animal = db.define('animal', {
     },
 });
 
-module.exports = Animal
+const getAll = async () => {
+    return await Animal.findAll({ raw: true });
+}
+
+const getOne = async (id) => {
+    return await Animal.findOne({ raw: true, where: { id: id } });
+}
+
+const createPet = async (data) => {
+
+    console.log(data);
+
+    await Animal.create(data);
+}
+
+const deletePet = async (id) => {
+    await Animal.destroy({ where: { id: id } });
+}
+
+const updatePet = async (data, id) => {
+    await Animal.update(data, {where: { id: id }});
+}
+
+module.exports = {
+    getAll,
+    getOne,
+    createPet,
+    deletePet,
+    updatePet,
+}

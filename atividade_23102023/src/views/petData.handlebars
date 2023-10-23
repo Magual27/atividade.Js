@@ -4,7 +4,7 @@
 <h3>Data de Nascimento: {{pet.data_nasc}}</h3>
 <br>
 <h1>Descrição: </h1>
-{{# pet.descricao}}
+{{#if pet.descricao}}
     <h3>{{pet.descricao}}</h3>
 {{else}}
     <h3>Não há descrição</h3>
