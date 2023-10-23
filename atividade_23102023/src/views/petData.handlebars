@@ -1,0 +1,11 @@
+<h1>Nome: {{pet.nome}}</h1>
+<h3>raca: {{pet.raca}}</h3>
+<h3>tipo: {{pet.tipo}}</h3>
+<h3>Data de Nascimento: {{pet.data_nasc}}</h3>
+<br>
+<h1>Descrição: </h1>
+{{# pet.descricao}}
+    <h3>{{pet.descricao}}</h3>
+{{else}}
+    <h3>Não há descrição</h3>
+{{/if}}

@@ -5,6 +5,7 @@ const { DataTypes } = require("sequelize");
 const Animal = db.define('animal', {
     nome: {
         type: DataTypes.STRING,
+        required: true,
     },
     raca: {
         type: DataTypes.STRING,
@@ -14,12 +15,12 @@ const Animal = db.define('animal', {
         type: DataTypes.STRING,
         required: true,
     },
+    data_nasc: {
+        type: DataTypes.DATE,
+    },
     descricao: {
         type: DataTypes.STRING,
     },
-    data_nasc: {
-        type: DataTypes.DATE,
-    }
 });
 
 module.exports = Animal

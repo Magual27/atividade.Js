@@ -1,11 +1,11 @@
-<a href="/user/{{this.id}}" class="div_musicas">
+<a href="/pet/{{this.id}}" class="div_musicas">
     <h1>{{this.nome}}</h1>
-    <h3>{{this.ocupacao}}</h3>
+    <h3>{{this.tipo}}</h3>
     <div class="container-forms">
-        <form action="/user/delete/{{this.id}}" method="post">
+        <form action="/pet/delete/{{this.id}}" method="post">
             <button type="submit">Deletar</button>
         </form>
-        <form action="/user/update/{{this.id}}" method="get">
+        <form action="/pet/update/{{this.id}}" method="get">
             <button type="submit">Atualizar</button>
         </form>
     </div>
