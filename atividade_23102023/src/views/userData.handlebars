@@ -1,0 +1,18 @@
+<h1>Nome: {{user.nome}}</h1>
+<h3>Ocupação: {{user.ocupacao}}</h3>
+<h3>Email: {{user.email}}</h3>
+<a href="/user/experience/adicionar/{{user.id}}">
+    <button>Adicionar Experiência</button>
+</a>
+<br>
+<h1>Experiências</h1>
+<div class="div-exp">
+    {{#if experiencia}}
+        {{#each experiencia}}
+            {{> experience}}
+        {{/each}}
+    </div>
+    {{else}}
+        <p>não há experiência</p>
+    {{/if}}
+</div>

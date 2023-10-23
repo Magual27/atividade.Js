@@ -1,0 +1,18 @@
+<form action="/user/att/{{user.id}}" method="post">
+    <span>Nome</span><br>
+    <input name="nome" type="text" placeholder="Digite seu nome" value="{{user.nome}}"><br>
+    <span>Email</span><br>
+    <input name="email" type="email" placeholder="Digite seu email" value="{{user.email}}"><br>
+    <span>Senha</span><br>
+    <input name="senha" type="password" placeholder="Digite a sua senha" value="{{user.senha}}"><br>
+    <span>Ocupaão</span><br>
+    <input name="ocupacao" type="text" placeholder="Digite sua ocupação" value="{{user.ocupacao}}"><br>
+    {{#if user.alertas}}
+        <input type="checkbox" name="alerta" checked>
+        <span>Deseja receber notificação de vagas?</span><br>
+    {{else}}
+        <input type="checkbox" name="alerta">
+        <span>Deseja receber notificação de vagas?</span><br>
+    {{/if}}
+    <button type="submit">Atualizar</button>
+</form>
