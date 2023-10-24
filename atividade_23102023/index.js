@@ -34,7 +34,11 @@ app.get("/pet/:id", async (req, res) => {
 
     const pet = await Animal.findOne({ where: { id: id }, raw: true });
 
-    res.render("petData", { pet });
+    let dt = new Date(pet.data_nasc);
+
+    const data_nasc = `${dt.getDate() + 1}/${dt.getMonth() + 1}/${dt.getFullYear()}`
+
+    res.render("petData", { pet, data_nasc });
 });
 
 app.get("/pets/cadastrar", (req, res) => {
