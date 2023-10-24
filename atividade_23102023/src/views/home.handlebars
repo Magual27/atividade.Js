@@ -1,0 +1,19 @@
+<h1>Home</h1>
+
+<div class="btn_cadastrar_home">
+    <a href="/pets/cadastrar">+</a>
+</div>
+
+
+{{#if pets}}
+    {{#each pets}}
+        {{> pet}}
+    {{/each}}
+{{else}}
+    <div style="text-align: center;">
+        <h1>Não há animais cadastrados</h1>
+        <a href="/">
+            <h3>Cadastre usuarios</h3>
+        </a>    
+    </div>
+{{/if}}

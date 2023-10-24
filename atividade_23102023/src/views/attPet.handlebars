@@ -1,0 +1,15 @@
+<form action="/pet/att" method="post">
+    <input type="hidden" name="id" value="{{pet.id}}">
+    <span>Nome</span><br>
+    <input name="nome" type="text" placeholder="Digite o nome" value="{{pet.nome}}"><br>
+    <span>Raça</span><br>
+    <input name="raca" type="text" placeholder="Digite a raça" value="{{pet.raca}}"><br>
+    <span>Tipo</span><br>
+    <input name="tipo" type="text" placeholder="Digite o tipo" value="{{pet.tipo}}"><br>
+    <span>Data de Nascimento</span><br>
+    <p>{{pet.data_nasc}}</p>
+    <input name="data_nasc" type="date"><br>
+    <span>Descrição:</span><br>
+    <input name="descricao" type="text" value="{{pet.descricao}}"><br>
+    <button type="submit">Atualizar</button>
+</form>
