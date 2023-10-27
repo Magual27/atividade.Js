@@ -11,7 +11,11 @@ const getOne = async(req, res) => {
     
     const pet = await animalModel.getOne(id);
 
-    return res.render("petData", { pet });
+    let dt = new Date(pet.data_nasc);
+
+    const data_nasc = `${dt.getDate() + 1}/${dt.getMonth() + 1}/${dt.getFullYear()}`
+    
+    return res.render("petData", { pet, data_nasc });
 }
 
 const getPetAddPage = (req, res) => {
