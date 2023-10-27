@@ -1,0 +1,11 @@
+<h1>Atualizar experiência</h1>
+
+<form action="/user/experience/att/{{id}}" method="post">
+    <span>Empresa</span><br>
+    <input name="empresa" type="text" placeholder="Digite a empresa" value="{{experiencia.empresa}}"><br>
+    <span>Cargo</span><br>
+    <input name="cargo" type="text" placeholder="Digite o cargo" value="{{experiencia.cargo}}"><br>a
+    <span>Descrição</span><br>
+    <input name="descricao" type="text" placeholder="Escreva um breve resumo da sua experência (Opcional)" class="input-desc" value="{{experiencia.descricao}}"><br>
+    <button type="submit">Adcionar</button>
+</form>

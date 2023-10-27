@@ -7,4 +7,10 @@
     {{else}}
         <p>Não há descrição</p>
     {{/if}}
+    <form action="/user/experience/delete/{{this.id}}" method="post">
+        <button type="submit">Deletar</button>
+    </form>
+    <form action="/user/experience/update/{{this.id}}" method="get">
+        <button type="submit">Atualizar</button>
+    </form>
 </div> 
